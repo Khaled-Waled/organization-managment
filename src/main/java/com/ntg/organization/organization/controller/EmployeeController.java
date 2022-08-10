@@ -41,4 +41,9 @@ public class EmployeeController {
 		return employeeService.deleteEmployeeById(id);
 	}
 
+	@GetMapping(value = "/set_department/{empId}/{depId}")
+	public void setEmployeesDepartment(@PathVariable Long empId, @PathVariable Long depId)
+	{
+		employeeService.setEmployeesDepartment(empId,depId);
+	}
 }

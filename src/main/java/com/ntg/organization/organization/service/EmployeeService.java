@@ -18,7 +18,8 @@ public class EmployeeService {
 		return (List<Employee>) employeeRepository.findAll();
 	}
 
-	public Employee createNewEmployee(Employee newEmp) {
+	public Employee createNewEmployee(Employee newEmp)
+	{
 		if (newEmp != null) {
 			return employeeRepository.save(newEmp);
 		}
@@ -38,4 +39,9 @@ public class EmployeeService {
 		return employeeRepository.findByNameAndEmail(name, email);
 	}
 
+
+	public void setEmployeesDepartment(Long empID, Long depID)
+	{
+		employeeRepository.setEmployeesDepartment(empID,depID);
+	}
 }
